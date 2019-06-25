@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 
-const App = () => {
-  return(<h1>hello world!!</h1>);
-};
+class App extends Component {
+  render() {
+    return <h3>vecfsvvr</h3>
+  }
+}
 
 export default App;
