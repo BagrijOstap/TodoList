@@ -14,9 +14,23 @@ class App extends Component {
   };
 
   render() {
+    const todoList = this.state.todoList;
+
+
     return <div>
       <h3>vecfsvvr</h3>
-      <TodoItem />
+      {
+        todoList.map((item) => {
+          return(
+            <TodoItem
+              title={item.title}
+              description={item.description}
+              isDone={item.isDone}
+            />
+          )
+        })
+
+      }
     </div>;
 
   };
