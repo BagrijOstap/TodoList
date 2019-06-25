@@ -1,5 +1,6 @@
-
 import React, { Component } from 'react';
+
+import TodoItem from './components/TodoItem'
 
 class App extends Component {
 
@@ -13,8 +14,13 @@ class App extends Component {
   };
 
   render() {
-    return (<h3>vecfsvvr</h3>);
+    return <div>
+      <h3>vecfsvvr</h3>
+      <TodoItem />
+    </div>;
+
   };
+
 }
 
 export default App;
