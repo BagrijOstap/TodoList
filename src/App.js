@@ -24,21 +24,24 @@ class App extends Component {
     const todoList = [...todoListLink];
     todoList.splice(removeIndex, 1);
     this.setState({ todoList: todoList })
-  }
+  };
 
   render() {
     const todoList = this.state.todoList;
-
+    const onTodoRemoveClick = this.removeListItemByIndex;
 
     return <div>
       <h3>vecfsvvr</h3>
       {
-        todoList.map((item) => {
+        todoList.map((item, index) => {
           return(
             <TodoItem
+              key={index}
               title={item.title}
               description={item.description}
               isDone={item.isDone}
+              index={index}
+              onDeleteClick={onTodoRemoveClick}
             />
           )
         })
@@ -48,6 +51,6 @@ class App extends Component {
 
   };
 
-}
+};
 
 export default App;
