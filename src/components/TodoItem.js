@@ -6,7 +6,7 @@ const TodoItem = (props) => {
   const index = props.index;
 
   return (
-    <div>
+    <div className="todo-item">
       <h3>{props.title}</h3>
       <p>description: {props.description}</p>
       <p>isDone: {props.isDone.toString()}</p>

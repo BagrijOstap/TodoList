@@ -30,8 +30,7 @@ class App extends Component {
     const todoList = this.state.todoList;
     const onTodoRemoveClick = this.removeListItemByIndex;
 
-    return <div>
-      <h3>vecfsvvr</h3>
+    return <div className="app-container">
       {
         todoList.map((item, index) => {
           return(
@@ -48,9 +47,7 @@ class App extends Component {
 
       }
     </div>;
-
   };
-
-};
+}
 
 export default App;
