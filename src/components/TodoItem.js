@@ -13,7 +13,6 @@ const TodoItem = (props) => {
       <p>description: {props.description}</p>
       <p>isDone: {props.isDone.toString()}</p>
       <button onClick={() => { onDeleteClick(index) }}>DELETE</button>
-      <hr/>
     </div>
   )
 };

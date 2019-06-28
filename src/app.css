@@ -1,0 +1,11 @@
+.app-container {
+    width: 100%;
+    min-width: 300px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid;
+    border-color: greenyellow;
+    padding: 10px;
+    border-radius: 10px;
+}
