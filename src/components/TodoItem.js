@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import './todoItem.css';
+
 const TodoItem = (props) => {
   const onDeleteClick = props.onDeleteClick;
   const index = props.index;
