@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 
 import TodoItem from './components/TodoItem'
+import CreateTodoItem from './components/CreateTodoItem';
 
 import './app.css';
+
 
 class App extends Component {
 
@@ -10,6 +12,7 @@ class App extends Component {
     super(props);
 
     this.removeListItemByIndex = this.removeListItemByIndex.bind(this);
+    this.addTodoItem = this.addTodoItem.bind(this);
   };
 
   state = {
@@ -19,6 +22,14 @@ class App extends Component {
       {title: 'todo3', description: 'carWash', isDone: false,},
       {title: 'todo4', description: 'repairCar', isDone: false,},
     ],
+  };
+
+  addTodoItem (name, description) {
+    const todoList = this.state.todoList;
+    const newTodoList = [...todoList];
+    newTodoList.push({ title: name, description: description, isDone: false, })
+    this.setState({ todoList: newTodoList })
+
   };
 
   removeListItemByIndex (removeIndex) {
@@ -46,9 +57,12 @@ class App extends Component {
             />
           )
         })
-
       }
+      <CreateTodoItem
+        onAddTodoItem={this.addTodoItem}
+      />
     </div>;
+
   };
 }
 
