@@ -21,7 +21,13 @@ class CreateTodoItem extends Component {
   onCreateTodoClick(){
     const name = this.state.name;
     const description = this.state.description;
-    this.props.onAddTodoItem(name, description)
+    if(name === '') {
+      alert('заповніть поле вводу name');
+    } else if(description === '') {
+      alert('заповніть поле вводу description');
+    } else {
+      this.props.onAddTodoItem(name, description);
+    };
   };
 
   onDescriptionChange(event){
