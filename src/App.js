@@ -13,6 +13,7 @@ class App extends Component {
 
     this.removeListItemByIndex = this.removeListItemByIndex.bind(this);
     this.addTodoItem = this.addTodoItem.bind(this);
+    this.changeIsDone = this.changeIsDone.bind(this);
   };
 
   state = {
@@ -22,6 +23,13 @@ class App extends Component {
       {title: 'todo3', description: 'carWash', isDone: false,},
       {title: 'todo4', description: 'repairCar', isDone: false,},
     ],
+  };
+
+  changeIsDone (index, status) {
+    const todoList = this.state.todoList;
+    const newTodoList = [...todoList];
+    newTodoList[index].isDone = status;
+    this.setState({ todoList: newTodoList })
   };
 
   addTodoItem (name, description) {
@@ -42,6 +50,7 @@ class App extends Component {
   render() {
     const todoList = this.state.todoList;
     const onTodoRemoveClick = this.removeListItemByIndex;
+    const changeIsDone = this.changeIsDone;
 
     return <div className="app-container">
       {
@@ -54,6 +63,7 @@ class App extends Component {
               isDone={item.isDone}
               index={index}
               onDeleteClick={onTodoRemoveClick}
+              changeIsDone={changeIsDone}
             />
           )
         })
